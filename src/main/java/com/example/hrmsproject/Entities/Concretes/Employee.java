@@ -13,7 +13,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Table(name = "employess")
 @EqualsAndHashCode(callSuper = false)
-@PrimaryKeyJoinColumn(name = "user_id",referencedColumnName = "id")
+@PrimaryKeyJoinColumn(name = "user_id")
 public class Employee extends User{
 
     @Column(name = "first_name")

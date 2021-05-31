@@ -7,5 +7,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface JobPositionDao extends JpaRepository<JobPosition,Integer> {
 
     JobPosition findByJobTitle(String title);
-
+    JobPosition getById(int id);
 }

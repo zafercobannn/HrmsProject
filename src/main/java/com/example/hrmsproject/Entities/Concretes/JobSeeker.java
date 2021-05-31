@@ -9,26 +9,31 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
+@Table(name = "jobseekers")
 @Data
-@Table(name="job_seekers")
+@PrimaryKeyJoinColumn(name = "user_id")
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode(callSuper = false)
-@PrimaryKeyJoinColumn(name = "user_id",referencedColumnName = "id")
-public class JobSeeker extends User {
+public class JobSeeker extends User{
 
-    @Column(name = "first_name")
+//	@Id
+//	@GeneratedValue
+//	@Column(name= "user_id")
+//	private int userId;
+
+    @Column(name= "first_name")
     private String firstName;
 
-    @Column(name = "last_name")
+    @Column(name= "last_name")
     private String lastName;
 
-    @Column(name = "national_id")
+    @Column(name= "national_id")
     private String nationalId;
 
-    @Column(name = "is_verified")
-    private boolean isVerified;
-
-    @Column(name = "date_of_birth")
+    @Column(name= "date_of_birth")
     private LocalDate dateOfBirth;
+
+    @Column(name = "is_verified", columnDefinition = "boolean default false")
+    private boolean isVerified = false;
+
 }

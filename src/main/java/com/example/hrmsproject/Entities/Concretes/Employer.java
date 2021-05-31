@@ -1,30 +1,41 @@
 package com.example.hrmsproject.Entities.Concretes;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
-@Data
 @Table(name = "employers")
+@Data
+@PrimaryKeyJoinColumn(name = "user_id")
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode(callSuper = false)
-@PrimaryKeyJoinColumn(name = "user_id",referencedColumnName = "id")
-public class Employer extends User {
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler","jobAdverts"})
+public class Employer extends User{
 
-    @Column(name = "company_name")
+//	@Id
+//	@GeneratedValue
+//	@Column(name= "user_id")
+//	private int userId;
+
+    @Column(name= "company_name")
     private String companyName;
 
-    @Column(name = "website")
+    @Column(name= "website")
     private String website;
 
-    @Column(name = "phone_number")
+    @Column(name= "phone_number")
     private String phoneNumber;
 
-    @Column(name = "is_verified")
-    private boolean isVerified;
+    @Column(name = "is_verified", columnDefinition = "boolean default false")
+    private boolean isVerified = false;
+
+    @OneToMany(mappedBy = "employer")
+    private List<JobAdvert> jobAdverts;
+
 }

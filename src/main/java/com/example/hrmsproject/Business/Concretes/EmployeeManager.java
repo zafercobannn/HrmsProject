@@ -20,6 +20,6 @@ public class EmployeeManager implements EmployeeService {
 
     @Override
     public DataResult<List<Employee>> getall() {
-        return new SuccessDataResult<List<Employee>>(employeeDao.findAll());
+        return new SuccessDataResult<List<Employee>>(this.employeeDao.findAll());
     }
 }
