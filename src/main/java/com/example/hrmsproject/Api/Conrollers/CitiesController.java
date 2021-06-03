@@ -12,12 +12,12 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/city")
-public class CityController {
+public class CitiesController {
 
     private CityService cityService;
 
     @Autowired
-    public CityController(CityService cityService) {
+    public CitiesController(CityService cityService) {
         super();
         this.cityService = cityService;
     }
@@ -42,11 +42,10 @@ public class CityController {
 //		return this.cityService.getById(id);
 //	}
 //
+
     @GetMapping("/getall")
     public DataResult<List<City>> getAll(){
         return this.cityService.getAll();
     }
-
-
 
 }

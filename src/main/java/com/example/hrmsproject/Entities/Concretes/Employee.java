@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "employess")
+@Table(name = "employees")
 @EqualsAndHashCode(callSuper = false)
 @PrimaryKeyJoinColumn(name = "user_id")
 public class Employee extends User{

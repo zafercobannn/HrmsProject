@@ -19,7 +19,7 @@ public class AuthManager implements AuthService {
 
     private UserService userService;
     private EmployerService employerService;
-    private JobSeekerService jobseekerService;
+    private JobSeekerService jobSeekerService;
     private VerificationService verificationService;
     private ValidationService validationService;
     private VerificationCodeService verificationCodeService;
@@ -32,7 +32,7 @@ public class AuthManager implements AuthService {
         super();
         this.userService = userService;
         this.employerService = employerService;
-        this.jobseekerService = jobseekerService;
+        this.jobSeekerService = jobSeekerService;
         this.verificationService = verificationService;
         this.validationService = validationService;
         this.verificationCodeService = verificationCodeService;
@@ -92,7 +92,7 @@ public class AuthManager implements AuthService {
         }
 
 
-        jobseekerService.add(jobSeeker);
+        jobSeekerService.add(jobSeeker);
         String code = verificationService.sendCode();
         verificationCodeRecord(code, jobSeeker.getId(), jobSeeker.getEmail());
         return new SuccessResult("Registration has been successfully completed");
@@ -143,7 +143,7 @@ public class AuthManager implements AuthService {
 
     private boolean checkIfExistsTcNo(String nationalId) {
 
-        if (this.jobseekerService.getJobSeekerByNationalId(nationalId).getData() == null) {
+        if (this.jobSeekerService.getJobSeekerByNationalId(nationalId).getData() == null) {
             return true;
         }
         return false;

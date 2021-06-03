@@ -22,7 +22,7 @@ public class JobSeekersController {
 
     @GetMapping("/getall")
     public DataResult<List<JobSeeker>> getall(){
-        return this.jobSeekerService.getall();
+        return this.jobSeekerService.getAll();
     }
 
     @PostMapping("/add")

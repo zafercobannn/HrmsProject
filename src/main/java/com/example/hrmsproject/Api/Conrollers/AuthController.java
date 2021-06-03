@@ -28,8 +28,8 @@ import org.springframework.web.bind.annotation.RestController;
         }
 
         @PostMapping("/registerJobseeker")
-        public Result registerJobseeker(@RequestBody JobSeeker jobseeker, String confirmPassword)
+        public Result registerJobSeeker(@RequestBody JobSeeker jobSeeker, String confirmPassword)
         {
-            return authService.registerJobSeeker(jobseeker, confirmPassword);
+            return authService.registerJobSeeker(jobSeeker, confirmPassword);
         }
  }
