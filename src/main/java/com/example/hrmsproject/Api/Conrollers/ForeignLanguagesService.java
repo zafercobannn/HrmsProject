@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/foreignlanguage")
+@RequestMapping("/api/foreignlanguages")
 public class ForeignLanguagesService {
     private ForeignLanguageForCVService foreignLanguageForCVService;
 
