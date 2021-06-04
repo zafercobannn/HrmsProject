@@ -6,15 +6,12 @@ import com.example.hrmsproject.Core.Utilities.Results.Result;
 import com.example.hrmsproject.Entities.Concretes.ExperienceForCV;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
-import javax.xml.crypto.Data;
 import java.util.List;
 
-@Service
+@RestController
+@RequestMapping("/api/experiences")
 public class ExperiencesController {
 
     private ExperienceForCVService experienceForCVService;
